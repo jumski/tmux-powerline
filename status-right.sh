@@ -18,27 +18,27 @@ mute_status_check "right"
 # Segment
 # Comment/uncomment the register function call to enable or disable a segment.
 
-declare -A pwd
-pwd+=(["script"]="${segments_path}/pwd.sh")
-pwd+=(["foreground"]="colour211")
-pwd+=(["background"]="colour89")
-pwd+=(["separator"]="${separator_left_bold}")
-#register_segment "pwd"
+# declare -A pwd
+# pwd+=(["script"]="${segments_path}/pwd.sh")
+# pwd+=(["foreground"]="colour211")
+# pwd+=(["background"]="colour89")
+# pwd+=(["separator"]="${separator_left_bold}")
+# #register_segment "pwd"
 
-declare -A mail_count
-mail_count+=(["script"]="${segments_path}/mail_count_maildir.sh")
-#mail_count+=(["script"]="${segments_path}/mail_count_gmail.sh")
-#mail_count+=(["script"]="${segments_path}/mail_count_apple_mail.sh")
-mail_count+=(["foreground"]="white")
-mail_count+=(["background"]="red")
-mail_count+=(["separator"]="${separator_left_bold}")
-register_segment "mail_count"
+# declare -A mail_count
+# mail_count+=(["script"]="${segments_path}/mail_count_maildir.sh")
+# #mail_count+=(["script"]="${segments_path}/mail_count_gmail.sh")
+# #mail_count+=(["script"]="${segments_path}/mail_count_apple_mail.sh")
+# mail_count+=(["foreground"]="white")
+# mail_count+=(["background"]="red")
+# mail_count+=(["separator"]="${separator_left_bold}")
+# register_segment "mail_count"
 
 declare -A now_playing
 if [ "$PLATFORM" == "linux" ]; then
-	now_playing+=(["script"]="${segments_path}/np_mpd.sh")
+	# now_playing+=(["script"]="${segments_path}/np_mpd.sh")
 	#now_playing+=(["script"]="${segments_path}/np_mpd_simple.sh")
-	#now_playing+=(["script"]="${segments_path}/np_mocp.sh")
+	now_playing+=(["script"]="${segments_path}/np_mocp.sh")
 	#now_playing+=(["script"]="${segments_path}/np_spotify_linux_wine.sh")
 	#now_playing+=(["script"]="${segments_path}/np_spotify_linux_native.sh")
 	#now_playing+=(["script"]="${segments_path}/np_rhythmbox.sh")
@@ -54,19 +54,19 @@ if [[ ${now_playing["script"]} ]]; then
 	register_segment "now_playing"
 fi
 
-declare -A cpu
-cpu+=(["script"]="${segments_path}/cpu.sh")
-cpu+=(["foreground"]="colour136")
-cpu+=(["background"]="colour240")
-cpu+=(["separator"]="${separator_left_bold}")
-#register_segment "cpu"
+# declare -A cpu
+# cpu+=(["script"]="${segments_path}/cpu.sh")
+# cpu+=(["foreground"]="colour136")
+# cpu+=(["background"]="colour240")
+# cpu+=(["separator"]="${separator_left_bold}")
+# #register_segment "cpu"
 
-declare -A load
-load+=(["script"]="${segments_path}/load.sh")
-load+=(["foreground"]="colour167")
-load+=(["background"]="colour237")
-load+=(["separator"]="${separator_left_bold}")
-register_segment "load"
+# declare -A load
+# load+=(["script"]="${segments_path}/load.sh")
+# load+=(["foreground"]="colour167")
+# load+=(["background"]="colour237")
+# load+=(["separator"]="${separator_left_bold}")
+# register_segment "load"
 
 declare -A battery
 if [ "$PLATFORM" == "mac" ]; then
@@ -77,31 +77,31 @@ fi
 battery+=(["foreground"]="colour127")
 battery+=(["background"]="colour137")
 battery+=(["separator"]="${separator_left_bold}")
-#register_segment "battery"
+register_segment "battery"
 
-declare -A weather
-weather+=(["script"]="${segments_path}/weather_yahoo.sh")
-#weather+=(["script"]="${segments_path}/weather_google.sh")
-weather+=(["foreground"]="colour255")
-weather+=(["background"]="colour37")
-weather+=(["separator"]="${separator_left_bold}")
-register_segment "weather"
+# declare -A weather
+# weather+=(["script"]="${segments_path}/weather_yahoo.sh")
+# #weather+=(["script"]="${segments_path}/weather_google.sh")
+# weather+=(["foreground"]="colour255")
+# weather+=(["background"]="colour37")
+# weather+=(["separator"]="${separator_left_bold}")
+# register_segment "weather"
 
-declare -A xkb_layout
-if [ "$PLATFORM" == "linux" ]; then
-	xkb_layout+=(["script"]="${segments_path}/xkb_layout.sh")
-	xkb_layout+=(["foreground"]="colour117")
-	xkb_layout+=(["background"]="colour125")
-	xkb_layout+=(["separator"]="${separator_left_bold}")
-fi
-#register_segment "xkb_layout"
+# declare -A xkb_layout
+# if [ "$PLATFORM" == "linux" ]; then
+# 	xkb_layout+=(["script"]="${segments_path}/xkb_layout.sh")
+# 	xkb_layout+=(["foreground"]="colour117")
+# 	xkb_layout+=(["background"]="colour125")
+# 	xkb_layout+=(["separator"]="${separator_left_bold}")
+# fi
+# #register_segment "xkb_layout"
 
-declare -A date_day
-date_day+=(["script"]="${segments_path}/date_day.sh")
-date_day+=(["foreground"]="colour136")
-date_day+=(["background"]="colour235")
-date_day+=(["separator"]="${separator_left_bold}")
-register_segment "date_day"
+# declare -A date_day
+# date_day+=(["script"]="${segments_path}/date_day.sh")
+# date_day+=(["foreground"]="colour136")
+# date_day+=(["background"]="colour235")
+# date_day+=(["separator"]="${separator_left_bold}")
+# register_segment "date_day"
 
 declare -A date_full
 date_full+=(["script"]="${segments_path}/date_full.sh")
